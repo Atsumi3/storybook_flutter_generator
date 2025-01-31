@@ -1,6 +1,6 @@
 pubspec.lock
 
-*.g.dart
+generated_stories.dart
 
 # IntelliJ related
 *.iml
