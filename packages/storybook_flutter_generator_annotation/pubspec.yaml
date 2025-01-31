@@ -1,5 +1,6 @@
 name: storybook_flutter_generator_annotation
 description: A code generator for storybook_flutter.
+version: 0.1.0
 publish_to: none
 repository: https://github.com/Atsumi3/storybook_flutter_generator
 issue_tracker: https://github.com/Atsumi3/storybook_flutter_generator/issues
