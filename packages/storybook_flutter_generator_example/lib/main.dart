@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-import 'merged_stories.g.dart';
+import 'generated_stories.dart';
 
 void main() {
   runApp(const CatalogApp());

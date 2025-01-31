@@ -46,7 +46,7 @@ This will create a single Dart file containing all Story files found in your pro
 ### Example Output
 
 ```dart
-// merged_stories.g.dart
+// generated_stories.dart
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -74,7 +74,7 @@ Now you can use the generated file within your `storybook_flutter` setup.
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-import 'merged_stories.g.dart';
+import 'generated_stories.dart';
 
 void main() {
   runApp(const CatalogApp());

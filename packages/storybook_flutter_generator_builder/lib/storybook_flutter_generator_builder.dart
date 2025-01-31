@@ -4,7 +4,7 @@ import 'package:source_gen/source_gen.dart';
 
 import 'story_builder.dart';
 
-const _generatedFileName = 'merged_stories.g.dart';
+const _generatedFileName = 'generated_stories.dart';
 
 /// build_runner によって呼び出されるエントリーポイント
 Builder storyCollectorBuilder(BuilderOptions options) =>
