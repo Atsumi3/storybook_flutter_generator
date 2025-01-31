@@ -1,0 +1,3 @@
+class GenerateStory {
+  const GenerateStory();
+}

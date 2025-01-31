@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: storybook_flutter_generator_annotation,storybook_flutter_generator_builder
+dependency_overrides:
+  storybook_flutter_generator_annotation:
+    path: ../storybook_flutter_generator_annotation
+  storybook_flutter_generator_builder:
+    path: ../storybook_flutter_generator_builder
