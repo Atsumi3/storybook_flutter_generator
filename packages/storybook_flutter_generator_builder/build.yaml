@@ -10,6 +10,6 @@ builders:
   story_builder:
     import: "package:storybook_flutter_generator_builder/storybook_flutter_generator_builder.dart"
     builder_factories: ["storyCollectorBuilder"]
-    build_extensions: { "$lib$": ["merged_stories.g.dart"] }
+    build_extensions: { "$lib$": ["generated_stories.dart"] }
     auto_apply: all_packages
     build_to: source
