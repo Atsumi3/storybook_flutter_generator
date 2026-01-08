@@ -1,4 +1,0 @@
-name: storybook_flutter_generator
-
-packages:
-  - packages/**

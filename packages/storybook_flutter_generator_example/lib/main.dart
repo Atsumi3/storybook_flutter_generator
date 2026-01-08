@@ -11,7 +11,5 @@ class CatalogApp extends StatelessWidget {
   const CatalogApp({super.key});
 
   @override
-  Widget build(BuildContext context) => Storybook(
-        stories: collectStories(),
-      );
+  Widget build(BuildContext context) => Storybook(stories: collectStories());
 }

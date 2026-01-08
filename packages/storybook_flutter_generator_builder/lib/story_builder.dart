@@ -14,30 +14,33 @@ class StoryCollectorGenerator extends Generator {
 
     for (var library in libraries) {
       /// 関数エレメントを取得し、その中でも [GenerateStory] があるものを抽出
-      final storyElements =
-          library.allElements.whereType<FunctionElement>().where(
-                (e) => e.metadata.any(
-                  (m) => m.element?.enclosingElement?.name == 'GenerateStory',
-                ),
-              );
+      final storyElements = library.allElements
+          .whereType<TopLevelFunctionElement>()
+          .where(
+            (e) => e.metadata.annotations.any(
+              (m) => m.element?.enclosingElement?.name == 'GenerateStory',
+            ),
+          );
       if (storyElements.isEmpty) {
         continue;
       }
 
       final resourceAlias = 'rs${++resourceCount}';
-      storyElements.forEach((element) {
+      for (final element in storyElements) {
         final methodName = '${element.name}()';
-        final importUri = element.source.uri.toString();
+        final importUri = element.library.identifier;
         if (importUri.startsWith('package:')) {
           imports.add("import '$importUri' as $resourceAlias;");
           storyFunctions.add('$resourceAlias.$methodName');
         } else {
           storyFunctions.add('$methodName');
         }
-      });
+      }
     }
 
-    return DartFormatter().format('''
+    return DartFormatter(
+      languageVersion: DartFormatter.latestLanguageVersion,
+    ).format('''
       // GENERATED CODE - DO NOT MODIFY BY HAND
       import 'package:storybook_flutter/storybook_flutter.dart';
 

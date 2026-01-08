@@ -4,7 +4,48 @@ repository: https://github.com/Atsumi3/storybook_flutter_generator
 issue_tracker: https://github.com/Atsumi3/storybook_flutter_generator/issues
 
 environment:
-  sdk: '>=2.17.0'
+  sdk: ">=3.9.0 <4.0.0"
+
+workspace:
+  - packages/storybook_flutter_generator_annotation
+  - packages/storybook_flutter_generator_builder
+  - packages/storybook_flutter_generator_example
 
 dev_dependencies:
-  melos: ^3.0.0
+  melos: ^7.0.0
+
+melos:
+  name: storybook_flutter_generator
+
+  packages:
+    - .
+    - packages/**
+
+  command:
+    bootstrap:
+      environment:
+        sdk: ">=3.9.0 <4.0.0"
+      dependencies:
+        analyzer: ^8.0.0
+
+  scripts:
+    analyze:
+      run: melos exec -- exec flutter analyze --no-fatal-infos
+
+    fix:
+      run: melos exec -- exec dart fix . --apply
+
+    format:
+      run: melos exec -- exec dart format .
+
+    code_quality:
+      description: Run format, analyze, and lint on all packages
+      run: |
+        melos fix
+        melos format
+        melos analyze
+    
+    build:generate_example:
+      run: melos exec -- exec dart run build_runner build -d
+      packageFilters:
+        dependsOn: build_runner

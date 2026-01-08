@@ -4,7 +4,7 @@ import 'package:storybook_flutter_generator_annotation/storybook_flutter_generat
 
 @GenerateStory()
 Story textStory() => Story(
-      name: 'Widgets/Text',
-      description: 'Simple text widget.',
-      builder: (context) => Center(child: Text('Simple text')),
-    );
+  name: 'Widgets/Text',
+  description: 'Simple text widget.',
+  builder: (context) => Center(child: Text('Simple text')),
+);
