@@ -17,3 +17,8 @@ generated_stories.dart
 .pub-cache/
 .pub/
 build/
+
+.mcp.json
+*.log
+.sereana
+mise.toml

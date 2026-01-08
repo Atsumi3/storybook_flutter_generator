@@ -25,16 +25,16 @@ class StoryCollectorGenerator extends Generator {
       }
 
       final resourceAlias = 'rs${++resourceCount}';
-      storyElements.forEach((element) {
+      for (final element in storyElements) {
         final methodName = '${element.name}()';
-        final importUri = element.source.uri.toString();
+        final importUri = element.library.identifier;
         if (importUri.startsWith('package:')) {
           imports.add("import '$importUri' as $resourceAlias;");
           storyFunctions.add('$resourceAlias.$methodName');
         } else {
           storyFunctions.add('$methodName');
         }
-      });
+      }
     }
 
     return DartFormatter().format('''
