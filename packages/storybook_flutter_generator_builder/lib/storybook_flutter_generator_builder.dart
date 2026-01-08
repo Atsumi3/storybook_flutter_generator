@@ -13,16 +13,17 @@ Builder storyCollectorBuilder(BuilderOptions options) =>
 class StoryCollectorBuilder implements Builder {
   @override
   Map<String, List<String>> get buildExtensions => {
-        r'$lib$': [_generatedFileName],
-      };
+    r'$lib$': [_generatedFileName],
+  };
 
   @override
   Future<void> build(BuildStep buildStep) async {
     final generator = StoryCollectorGenerator();
 
     /// search .story.dart file
-    final storyFiles =
-        await buildStep.findAssets(Glob('**/*.story.dart')).toList();
+    final storyFiles = await buildStep
+        .findAssets(Glob('**/*.story.dart'))
+        .toList();
 
     /// load .story.dart file
     final loadAssetFuture = storyFiles.map(
