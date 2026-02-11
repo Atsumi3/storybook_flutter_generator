@@ -20,5 +20,6 @@ build/
 
 .mcp.json
 *.log
-.sereana
+.serena/
+.metadata
 mise.toml
