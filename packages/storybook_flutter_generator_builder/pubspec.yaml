@@ -7,10 +7,10 @@ repository: https://github.com/Atsumi3/storybook_flutter_generator
 issue_tracker: https://github.com/Atsumi3/storybook_flutter_generator/issues
 
 environment:
-  sdk: ">=3.9.0 <4.0.0"
+  sdk: ">=3.10.8 <4.0.0"
 
 dependencies:
-  analyzer: ^8.0.0
+  analyzer: ^9.0.0
   build: any
   dart_style: any
   glob: any
